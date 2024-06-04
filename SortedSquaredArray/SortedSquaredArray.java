@@ -1,3 +1,5 @@
+package SortedSquaredArray;
+
 import java.util.ArrayList;
 
 public class SortedSquaredArray {
