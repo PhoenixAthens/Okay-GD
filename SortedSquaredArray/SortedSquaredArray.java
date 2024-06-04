@@ -37,7 +37,7 @@ public class SortedSquaredArray {
     }
 
     public static int[] SortSquaredArray(int[] input) {
-        if (input.length <= 1) return input;
+        if (input.length < 1) return input;
         else {
             for (int i = 0; i < input.length; i++) {
                 input[i] = input[i] * input[i];

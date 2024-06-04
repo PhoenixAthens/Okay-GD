@@ -12,7 +12,7 @@ let testCases = [
 ];
 
 function sqSort(arr) {
-  if (arr.length <= 1) return arr;
+  if (arr.length < 1) return arr;
   else {
     arr = arr.map((i) => i * i);
     return arr.sort((a, b) => a - b);
