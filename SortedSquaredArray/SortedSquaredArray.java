@@ -48,4 +48,22 @@ public class SortedSquaredArray {
             return input;
         }
     }
+
+    public int[] sortedSquares_2(int[] nums) {
+        for (int i = 0; i < nums.length; i++) nums[i] *= nums[i];
+        int start = 0;
+        int end = nums.length - 1;
+        int[] result = new int[nums.length];
+        int k = nums.length - 1;
+        while (start <= end) {
+            if (nums[start] >= nums[end]) {
+                result[k--] = nums[start];
+                start++;
+            } else {
+                result[k--] = nums[end];
+                end--;
+            }
+        }
+        return result;
+    }
 }
