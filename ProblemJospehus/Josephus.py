@@ -10,13 +10,21 @@ print(findTheWinner(5,2))
 
 def findWinner_2(n,k):
     arr = [i+1 for i in range(n)]
-    print(arr)
     i = 0
     while(len(arr)!=1):
         index = (i+k-1)%len(arr)
-        print(index)
-        arr.pop(index);
-        i+=1
+        arr.pop(index)
+        i=index
     return arr[0]
 
 print(findWinner_2(5,2))
+
+def findTheWinner_2_recursive(arr,start, k):
+    if len(arr) == 1:
+        return arr[0]
+
+    rem = (start+k-1)%len(arr)
+    arr.pop(rem);
+    return findTheWinner_2_recursive(arr,rem,k)
+
+print(findTheWinner_2_recursive([1,2,3,4,5],0,2))
