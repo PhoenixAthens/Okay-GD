@@ -28,3 +28,14 @@ def findTheWinner_2_recursive(arr,start, k):
     return findTheWinner_2_recursive(arr,rem,k)
 
 print(findTheWinner_2_recursive([1,2,3,4,5],0,2))
+
+def findTheWinner_guts(count, jump):
+    if count == 1:
+        return 0
+    else:
+        return (findTheWinner_3(count-1,jump)+jump)%count
+
+def findTheWinner_3(count, jump):
+    return findTheWinner_guts(count, jump)+1
+
+print(findTheWinner_3(5,3))
